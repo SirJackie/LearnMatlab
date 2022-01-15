@@ -38,23 +38,52 @@ clc
 % % With semicolon: result won't be printed
 % v = [3 1];
 
-% Printing
-v = [3 1];
+% % Printing
+% v = [3 1];
+% 
+% % If you want to print the variable just type its label without semicolon
+% v
+% 
+% % Labels typed WITH semicolon will NOT be printed
+% v;
 
-% If you want to print the variable just type its label without semicolon
-v
+% % Row & Column Vector
+% % Unlike Sympy, Matlab always create row vectors by default
+% % You can define column vector using []' (using an apostrophe)
+% v = [3 1]'
 
-% Labels typed WITH semicolon will NOT be printed
-v;
+% % Define a Arithmetic Progression
+% v = [1:8];
+% v = [2:0.25:4];
+% v
 
+% % Accessing elements within a vector
+% % Unlike Python, Matlab use v(x) to access the entry instead of v[x] in
+% % Python
+% % Comparison:  Accessing Entry     Call Function
+% % Matlab -----       v(n)          Don't know yet
+% % Python -----       v[n]               f(x)
+% v = [1:8];
+% v(1)
 
+% % Temporarily Variables
+% % In Python, when you create a constant number 5 in an individual line,
+% %            it just created in that line and destroyed in the next line
+% % In Matlab, the constant number 5 will saved in a variable called
+% %            "ans", and it won't be destroy unless execute "clear" cmd
+% 5  % See how a constant temporarily number 5 saved in the workspace
 
+% % You can omit the [] when creating Arithmetic Progression
+% a = [0:2:8]
+% a = 0:2:8
 
-
-
-
-
-
+% You can also view specific parts of vector using ()
+% Notice that indicies in Matlab starts from 1 instead of 0
+% So you can't use v(0), please use v(1) instead
+v = [1:10];
+v(1)
+v(1:5)
+v(1:2:10)
 
 
 
