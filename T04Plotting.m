@@ -84,17 +84,23 @@ clf
 % plot(x, y, '-r')
 % axis off
 
-x = linspace(0, 2*pi, 30)
-y = sin(x)
-subplot(2, 2, 1)
-plot(x, y, '-r')
-subplot(2, 2, 2)
-plot(x, y, '*g')
-subplot(2, 2, 3)
-plot(x, y, '-.b')
-subplot(2, 2, 4)
-plot(x, y, ':m')
+% % Multi Figure
+% x = linspace(0, 2*pi, 30)
+% y = sin(x)
+% subplot(2, 2, 1)
+% plot(x, y, '-r')
+% subplot(2, 2, 2)
+% plot(x, y, '*g')
+% subplot(2, 2, 3)
+% plot(x, y, '-.b')
+% subplot(2, 2, 4)
+% plot(x, y, ':m')
 
+% Save Plotting Result
+x = linspace(0, 2*pi, 1000)
+y = sin(x)
+plot(x, y, '-r')
+print -dpng T04PlottingResult.png
 
 
 
