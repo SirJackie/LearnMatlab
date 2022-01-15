@@ -1,0 +1,542 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/operations.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vector Functions &mdash; Matlab Tutorial 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/siteColours.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Matlab Tutorial 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Loops" href="control.html"/>
+        <link rel="prev" title="Introduction to Matrices in Matlab" href="matrix.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matlab Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.cyclismo.org/tutorial/matlab/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+<div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Vector Functions</a></li>
+</ul>
+</div>
+					
+
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vector.html">Introduction to Vectors in Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Introduction to Matrices in Matlab</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vector Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="execute.html">Executable Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subroutine.html">Subroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="if.html">The If Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataFile.html">Data Files</a></li>
+</ul>
+
+
+<div class="datacampAd">
+  <span style="vertical-align:top;color: black;">
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8301099787686694";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_type = "text_image";
+google_ad_channel ="6171035172";
+google_ad_slot = "4696657180";
+google_color_border = "808080";
+google_color_bg = "F0ECEC";
+google_color_link = "000000";
+google_color_url = "666666.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</center>
+</span>
+</div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Matlab Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Vector Functions</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vector-functions">
+<span id="vectoroperations"></span><h1>Vector Functions<a class="headerlink" href="#vector-functions" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Matlab makes it easy to create vectors and matrices. The real power of
+Matlab is the ease in which you can manipulate your vectors and
+matrices. Here we assume that you know the basics of defining and
+manipulating vectors and matrices. In particular we assume that you
+know how to create vectors and matrices and know how to index into
+them. For more information on those topics see our tutorial on either
+vectors (<a class="reference internal" href="vector.html#vectors"><span>Introduction to Vectors in Matlab</span></a>) or matrices (<a class="reference internal" href="matrix.html#matrices"><span>Introduction to Matrices in Matlab</span></a>).</p>
+<p>In this tutorial we will first demonstrate simple manipulations such
+as addition, subtraction, and multiplication. Following this basic
+&#8220;element-wise&#8221; operations are discussed. Once these operations are
+shown, they are put together to demonstrate how relatively complex
+operations can be defined with little effort.</p>
+<p>First, we will look at simple addition and subtraction of vectors. The
+notation is the same as found in most linear algebra texts. We will
+define two vectors and add and subtract them:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span><span class="o">&#39;</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">1</span>
+     <span class="mi">2</span>
+     <span class="mi">3</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span><span class="p">]</span><span class="o">&#39;</span>
+
+<span class="n">b</span> <span class="p">=</span>
+
+     <span class="mi">2</span>
+     <span class="mi">4</span>
+     <span class="mi">6</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">+</span><span class="n">b</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">3</span>
+     <span class="mi">6</span>
+     <span class="mi">9</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">-</span><span class="n">b</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="o">-</span><span class="mi">1</span>
+    <span class="o">-</span><span class="mi">2</span>
+    <span class="o">-</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Multiplication of vectors and matrices must follow strict rules.
+Actually, so must addition. In the example above, the vectors are both
+column vectors with three entries. You cannot add a row vector to a
+column vector. Multiplication, though, can be a bit trickier. The
+number of columns of the thing on the left must be equal to the number
+of rows of the thing on the right of the multiplication symbol:</p>
+<span class="target" id="index-1"></span><div class="highlight-matlab" id="index-2"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">*</span><span class="n">b</span>
+??? <span class="n">Error</span> <span class="n">using</span> <span class="o">==&gt;</span> <span class="o">*</span>
+<span class="n">Inner</span> <span class="n">matrix</span> <span class="n">dimensions</span> <span class="n">must</span> <span class="n">agree</span><span class="p">.</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">*</span><span class="n">b</span><span class="o">&#39;</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">2</span>     <span class="mi">4</span>     <span class="mi">6</span>
+     <span class="mi">4</span>     <span class="mi">8</span>    <span class="mi">12</span>
+     <span class="mi">6</span>    <span class="mi">12</span>    <span class="mi">18</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">&#39;*</span><span class="n">b</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="mi">28</span>
+</pre></div>
+</div>
+<p>There are many times where we want to do an operation to every entry
+in a vector or matrix. Matlab will allow you to do this with &#8220;element-
+wise&#8221; operations. For example, suppose you want to multiply each entry
+in vector v with its cooresponding entry in vector b. In other words,
+suppose you want to find v(1)*b(1), v(2)*b(2), and v(3)*b(3). It would
+be nice to use the &#8220;*&#8221; symbol since you are doing some sort of
+multiplication, but since it already has a definition, we have to come
+up with something else. The programmers who came up with Matlab
+decided to use the symbols &#8221;.*&#8221; to do this. In fact, you can put a
+period in front of any math symbol to tell Matlab that you want the
+operation to take place on each entry of the vector.</p>
+<span class="target" id="index-3"></span><div class="highlight-matlab" id="index-4"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">.*</span><span class="n">b</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">2</span>
+     <span class="mi">8</span>
+    <span class="mi">18</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">./</span><span class="n">b</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="mf">0.5000</span>
+    <span class="mf">0.5000</span>
+    <span class="mf">0.5000</span>
+</pre></div>
+</div>
+<p>Since we have opened the door to non-linear operations, why not go all
+the way? If you pass a vector to a predefined math function, it will
+return a vector of the same size, and each entry is found by
+performing the specified operation on the cooresponding entry of the
+original vector:</p>
+<span class="target" id="index-5"></span><div class="highlight-matlab" id="index-6"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="nb">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="mf">0.8415</span>
+    <span class="mf">0.9093</span>
+    <span class="mf">0.1411</span>
+
+<span class="o">&gt;&gt;</span> <span class="nb">log</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+         <span class="mi">0</span>
+    <span class="mf">0.6931</span>
+    <span class="mf">1.0986</span>
+</pre></div>
+</div>
+<p>The ability to work with these vector functions is one of the
+advantages of Matlab. Now complex operations can be defined that can
+be done quickly and easily. In the following example a very large
+vector is defined and can be easily manipulated. (Notice that the
+second command has a &#8221;;&#8221; at the end of the line. This tells Matlab
+that it should not print out the result.)</p>
+<span class="target" id="index-7"></span><div class="highlight-matlab" id="index-8"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+
+<span class="n">x</span> <span class="p">=</span>
+
+  <span class="n">Columns</span> <span class="mi">1</span> <span class="n">through</span> <span class="mi">7</span>
+
+         <span class="mi">0</span>    <span class="mf">0.1000</span>    <span class="mf">0.2000</span>    <span class="mf">0.3000</span>    <span class="mf">0.4000</span>    <span class="mf">0.5000</span>    <span class="mf">0.6000</span>
+
+    <span class="p">[</span><span class="n">stuff</span> <span class="n">deleted</span><span class="p">]</span>
+
+  <span class="n">Columns</span> <span class="mi">995</span> <span class="n">through</span> <span class="mi">1001</span>
+
+   <span class="mf">99.4000</span>   <span class="mf">99.5000</span>   <span class="mf">99.6000</span>   <span class="mf">99.7000</span>   <span class="mf">99.8000</span>   <span class="mf">99.9000</span>  <span class="mf">100.0000</span>
+
+
+<span class="o">&gt;&gt;</span> <span class="n">y</span> <span class="p">=</span> <span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="n">x</span><span class="o">./</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Through this simple manipulation of vectors, Matlab will also let you
+graph the results. The following example also demonstrates one of the
+most useful commands in Matlab, the &#8220;help&#8221; command.</p>
+<span class="target" id="index-9"></span><div class="highlight-matlab" id="index-10"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;rx&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">help</span> <span class="n">plot</span>
+
+ <span class="n">PLOT</span>   <span class="n">Linear</span> <span class="n">plot</span><span class="p">.</span>
+    <span class="n">PLOT</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span> <span class="n">plots</span> <span class="n">vector</span> <span class="n">Y</span> <span class="n">versus</span> <span class="n">vector</span> <span class="n">X</span><span class="p">.</span> <span class="n">If</span> <span class="n">X</span> <span class="n">or</span> <span class="n">Y</span> <span class="n">is</span> <span class="n">a</span> <span class="n">matrix</span><span class="p">,</span>
+    <span class="n">then</span> <span class="n">the</span> <span class="n">vector</span> <span class="n">is</span> <span class="n">plotted</span> <span class="n">versus</span> <span class="n">the</span> <span class="n">rows</span> <span class="n">or</span> <span class="n">columns</span> <span class="n">of</span> <span class="n">the</span> <span class="n">matrix</span><span class="p">,</span>
+    <span class="n">whichever</span> <span class="n">line</span> <span class="n">up</span><span class="p">.</span>  <span class="n">If</span> <span class="n">X</span> <span class="n">is</span> <span class="n">a</span> <span class="n">scalar</span> <span class="n">and</span> <span class="n">Y</span> <span class="n">is</span> <span class="n">a</span> <span class="n">vector</span><span class="p">,</span> <span class="nb">length</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="n">disconnected</span> <span class="n">points</span> <span class="n">are</span> <span class="n">plotted</span><span class="p">.</span>
+
+    <span class="n">PLOT</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span> <span class="n">plots</span> <span class="n">the</span> <span class="n">columns</span> <span class="n">of</span> <span class="n">Y</span> <span class="n">versus</span> <span class="n">their</span> <span class="n">index</span><span class="p">.</span>
+    <span class="n">If</span> <span class="n">Y</span> <span class="n">is</span> <span class="nb">complex</span><span class="p">,</span> <span class="n">PLOT</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span> <span class="n">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="n">PLOT</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span><span class="nb">imag</span><span class="p">(</span><span class="n">Y</span><span class="p">)).</span>
+    <span class="n">In</span> <span class="n">all</span> <span class="n">other</span> <span class="n">uses</span> <span class="n">of</span> <span class="n">PLOT</span><span class="p">,</span> <span class="n">the</span> <span class="n">imaginary</span> <span class="n">part</span> <span class="n">is</span> <span class="n">ignored</span><span class="p">.</span>
+
+    <span class="n">Various</span> <span class="n">line</span> <span class="n">types</span><span class="p">,</span> <span class="n">plot</span> <span class="n">symbols</span> <span class="n">and</span> <span class="n">colors</span> <span class="n">may</span> <span class="n">be</span> <span class="n">obtained</span> <span class="n">with</span>
+    <span class="n">PLOT</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">S</span><span class="p">)</span> <span class="n">where</span> <span class="n">S</span> <span class="n">is</span> <span class="n">a</span> <span class="n">character</span> <span class="n">string</span> <span class="n">made</span> <span class="n">from</span> <span class="n">one</span> <span class="n">element</span>
+    <span class="n">from</span> <span class="n">any</span> <span class="n">or</span> <span class="n">all</span> <span class="n">the</span> <span class="n">following</span> <span class="mi">3</span> <span class="n">columns</span><span class="p">:</span>
+
+           <span class="n">b</span>     <span class="n">blue</span>          <span class="p">.</span>     <span class="n">point</span>              <span class="o">-</span>     <span class="n">solid</span>
+           <span class="n">g</span>     <span class="n">green</span>         <span class="n">o</span>     <span class="n">circle</span>             <span class="p">:</span>     <span class="n">dotted</span>
+           <span class="n">r</span>     <span class="n">red</span>           <span class="n">x</span>     <span class="n">x</span><span class="o">-</span><span class="n">mark</span>             <span class="o">-</span><span class="p">.</span>    <span class="n">dashdot</span>
+           <span class="n">c</span>     <span class="n">cyan</span>          <span class="o">+</span>     <span class="n">plus</span>               <span class="o">--</span>    <span class="n">dashed</span>
+           <span class="n">m</span>     <span class="n">magenta</span>       <span class="o">*</span>     <span class="n">star</span>
+           <span class="n">y</span>     <span class="n">yellow</span>        <span class="n">s</span>     <span class="n">square</span>
+           <span class="n">k</span>     <span class="n">black</span>         <span class="n">d</span>     <span class="n">diamond</span>
+                               <span class="n">v</span>     <span class="n">triangle</span> <span class="p">(</span><span class="n">down</span><span class="p">)</span>
+                               ^     <span class="n">triangle</span> <span class="p">(</span><span class="n">up</span><span class="p">)</span>
+                               <span class="o">&lt;</span>     <span class="n">triangle</span> <span class="p">(</span><span class="n">left</span><span class="p">)</span>
+                               <span class="o">&gt;</span>     <span class="n">triangle</span> <span class="p">(</span><span class="n">right</span><span class="p">)</span>
+                               <span class="n">p</span>     <span class="n">pentagram</span>
+                               <span class="n">h</span>     <span class="n">hexagram</span>
+
+    <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">PLOT</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s">&#39;c+:&#39;</span><span class="p">)</span> <span class="n">plots</span> <span class="n">a</span> <span class="n">cyan</span> <span class="n">dotted</span> <span class="n">line</span> <span class="n">with</span> <span class="n">a</span> <span class="n">plus</span>
+    <span class="n">at</span> <span class="n">each</span> <span class="n">data</span> <span class="n">point</span><span class="p">;</span> <span class="n">PLOT</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s">&#39;bd&#39;</span><span class="p">)</span> <span class="n">plots</span> <span class="n">blue</span> <span class="n">diamond</span> <span class="n">at</span> <span class="n">each</span> <span class="n">data</span>
+    <span class="n">point</span> <span class="n">but</span> <span class="n">does</span> <span class="n">not</span> <span class="n">draw</span> <span class="n">any</span> <span class="n">line</span><span class="p">.</span>
+
+    <span class="n">PLOT</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span><span class="n">Y1</span><span class="p">,</span><span class="n">S1</span><span class="p">,</span><span class="n">X2</span><span class="p">,</span><span class="n">Y2</span><span class="p">,</span><span class="n">S2</span><span class="p">,</span><span class="n">X3</span><span class="p">,</span><span class="n">Y3</span><span class="p">,</span><span class="n">S3</span><span class="p">,</span><span class="c">...) combines the plots defined by</span>
+    <span class="n">the</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">S</span><span class="p">)</span> <span class="n">triples</span><span class="p">,</span> <span class="n">where</span> <span class="n">the</span> <span class="n">X</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">and</span> <span class="n">Y</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">are</span> <span class="n">vectors</span> <span class="n">or</span> <span class="n">matrices</span>
+    <span class="n">and</span> <span class="n">the</span> <span class="n">S</span><span class="o">&#39;</span><span class="n">s</span> <span class="n">are</span> <span class="n">strings</span><span class="p">.</span>
+
+    <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">PLOT</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s">&#39;y-&#39;</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="s">&#39;go&#39;</span><span class="p">)</span> <span class="n">plots</span> <span class="n">the</span> <span class="n">data</span> <span class="n">twice</span><span class="p">,</span> <span class="n">with</span> <span class="n">a</span>
+    <span class="n">solid</span> <span class="n">yellow</span> <span class="n">line</span> <span class="n">interpolating</span> <span class="n">green</span> <span class="n">circles</span> <span class="n">at</span> <span class="n">the</span> <span class="n">data</span> <span class="n">points</span><span class="p">.</span>
+
+    <span class="n">The</span> <span class="n">PLOT</span> <span class="n">command</span><span class="p">,</span> <span class="k">if</span> <span class="n">no</span> <span class="n">color</span> <span class="n">is</span> <span class="n">specified</span><span class="p">,</span> <span class="n">makes</span> <span class="n">automatic</span> <span class="n">use</span> <span class="n">of</span>
+    <span class="n">the</span> <span class="n">colors</span> <span class="n">specified</span> <span class="n">by</span> <span class="n">the</span> <span class="n">axes</span> <span class="n">ColorOrder</span> <span class="n">property</span><span class="p">.</span>  <span class="n">The</span> <span class="n">default</span>
+    <span class="n">ColorOrder</span> <span class="n">is</span> <span class="n">listed</span> <span class="n">in</span> <span class="n">the</span> <span class="n">table</span> <span class="n">above</span> <span class="k">for</span> <span class="n">color</span> <span class="n">systems</span> <span class="n">where</span> <span class="n">the</span>
+    <span class="n">default</span> <span class="n">is</span> <span class="n">blue</span> <span class="k">for</span> <span class="n">one</span> <span class="n">line</span><span class="p">,</span> <span class="n">and</span> <span class="k">for</span> <span class="n">multiple</span> <span class="n">lines</span><span class="p">,</span> <span class="n">to</span> <span class="n">cycle</span>
+    <span class="n">through</span> <span class="n">the</span> <span class="n">first</span> <span class="n">six</span> <span class="n">colors</span> <span class="n">in</span> <span class="n">the</span> <span class="n">table</span><span class="p">.</span>  <span class="n">For</span> <span class="n">monochrome</span> <span class="n">systems</span><span class="p">,</span>
+    <span class="n">PLOT</span> <span class="n">cycles</span> <span class="n">over</span> <span class="n">the</span> <span class="n">axes</span> <span class="n">LineStyleOrder</span> <span class="n">property</span><span class="p">.</span>
+
+    <span class="n">PLOT</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">column</span> <span class="n">vector</span> <span class="n">of</span> <span class="n">handles</span> <span class="n">to</span> <span class="n">LINE</span> <span class="n">objects</span><span class="p">,</span> <span class="n">one</span>
+    <span class="n">handle</span> <span class="n">per</span> <span class="n">line</span><span class="p">.</span>
+
+    <span class="n">The</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="n">pairs</span><span class="p">,</span> <span class="n">or</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">S</span> <span class="n">triples</span><span class="p">,</span> <span class="n">can</span> <span class="n">be</span> <span class="n">followed</span> <span class="n">by</span>
+    <span class="n">parameter</span><span class="o">/</span><span class="n">value</span> <span class="n">pairs</span> <span class="n">to</span> <span class="n">specify</span> <span class="n">additional</span> <span class="k">properties</span>
+    <span class="n">of</span> <span class="n">the</span> <span class="n">lines</span><span class="p">.</span>
+
+    <span class="n">See</span> <span class="n">also</span> <span class="n">SEMILOGX</span><span class="p">,</span> <span class="n">SEMILOGY</span><span class="p">,</span> <span class="n">LOGLOG</span><span class="p">,</span> <span class="n">PLOTYY</span><span class="p">,</span> <span class="n">GRID</span><span class="p">,</span> <span class="n">CLF</span><span class="p">,</span> <span class="n">CLC</span><span class="p">,</span> <span class="n">TITLE</span><span class="p">,</span>
+    <span class="n">XLABEL</span><span class="p">,</span> <span class="n">YLABEL</span><span class="p">,</span> <span class="n">AXIS</span><span class="p">,</span> <span class="n">AXES</span><span class="p">,</span> <span class="n">HOLD</span><span class="p">,</span> <span class="n">COLORDEF</span><span class="p">,</span> <span class="n">LEGEND</span><span class="p">,</span> <span class="n">SUBPLOT</span><span class="p">,</span> <span class="n">STEM</span><span class="p">.</span>
+
+ <span class="n">Overloaded</span> <span class="k">methods</span>
+    <span class="n">help</span> <span class="n">idmodel</span><span class="o">/</span><span class="n">plot</span><span class="p">.</span><span class="n">m</span>
+    <span class="n">help</span> <span class="n">iddata</span><span class="o">/</span><span class="n">plot</span><span class="p">.</span><span class="n">m</span>
+
+
+<span class="o">&gt;&gt;</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;go&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;go&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="nb">exp</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s">&#39;m--&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="n">whos</span>
+  <span class="n">Name</span>      <span class="n">Size</span>                   <span class="n">Bytes</span>  <span class="n">Class</span>
+
+  <span class="nb">ans</span>       <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">b</span>         <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">v</span>         <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">x</span>         <span class="mi">1</span><span class="n">x1001</span>                  <span class="mi">8008</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">y</span>         <span class="mi">1</span><span class="n">x1001</span>                  <span class="mi">8008</span>  <span class="n">double</span> <span class="n">array</span>
+
+<span class="n">Grand</span> <span class="n">total</span> <span class="n">is</span> <span class="mi">2011</span> <span class="n">elements</span> <span class="n">using</span> <span class="mi">16088</span> <span class="n">bytes</span>
+</pre></div>
+</div>
+<p>The compact notation will let you tell the computer to do lots of
+calculations using few commands. For example, suppose you want to
+calculate the divided differences for a given equation. Once you have
+the grid points and the values of the function at those grid points,
+building a divided difference table is simple:</p>
+<span class="target" id="index-11"></span><span class="target" id="index-12"></span><span class="target" id="index-13"></span><div class="highlight-matlab" id="index-14"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">coef</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1001</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="n">coef</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">1001</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1000</span><span class="p">))</span><span class="o">./</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">1001</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">1000</span><span class="p">));</span>
+<span class="o">&gt;&gt;</span> <span class="n">whos</span>
+  <span class="n">Name</span>       <span class="n">Size</span>                   <span class="n">Bytes</span>  <span class="n">Class</span>
+
+  <span class="nb">ans</span>        <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">b</span>          <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">coef</span>       <span class="mi">1</span><span class="n">x1001</span>                  <span class="mi">8008</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">v</span>          <span class="mi">3</span><span class="n">x1</span>                       <span class="mi">24</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">x</span>          <span class="mi">1</span><span class="n">x1001</span>                  <span class="mi">8008</span>  <span class="n">double</span> <span class="n">array</span>
+  <span class="n">y</span>          <span class="mi">1</span><span class="n">x1000</span>                  <span class="mi">8000</span>  <span class="n">double</span> <span class="n">array</span>
+
+<span class="n">Grand</span> <span class="n">total</span> <span class="n">is</span> <span class="mi">3008</span> <span class="n">elements</span> <span class="n">using</span> <span class="mi">24064</span> <span class="n">bytes</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">coef</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="mf">0.0500</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">y</span> <span class="p">=</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">1000</span><span class="p">)</span><span class="o">-</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">999</span><span class="p">))</span><span class="o">./</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">:</span><span class="mi">1001</span><span class="p">)</span><span class="o">-</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">999</span><span class="p">));</span>
+<span class="o">&gt;&gt;</span> <span class="n">coef</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span>
+<span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
+<p>From this algorithm you can find the Lagrange polynomial that
+interpolates the points you defined above (vector x). Of course, with
+so many points, this might get a bit tedious. Fortunately, matlab has
+an easy way of letting the computer do the repetitive things, which is
+examined in the next tutorial.</p>
+</div>
+
+
+           </div>
+          </div>
+          
+
+
+
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="control.html" class="btn btn-neutral float-right" title="Loops" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="matrix.html" class="btn btn-neutral" title="Introduction to Matrices in Matlab" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+		
+
+		<br><br>
+
+
+<footer>
+		<hr/>
+
+		<div role="contentinfo">
+          <center>
+          <script async src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- matlab tutorial wide -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8301099787686694"
+     data-ad-slot="8763269985"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+
+			<p>
+			<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:kjblack@gmail.com" property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> (2015).<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+            </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../cdn.mathjax.org/mathjax/latest/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="../../../licensebuttons.net/l/by-nc/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href=href%3d_mailto_kjblack%40gmail.html property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+</p>
+<p>This page generated using <a href="http://sphinx-doc.org/">Sphinx</a>.</p>
+
+
+
+
+
+</body>
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/operations.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:27 GMT -->
+</html>

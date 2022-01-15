@@ -1,0 +1,25 @@
+HTTrack3.48-21+htsswf+htsjava launched on Sat, 15 Jan 2022 12:31:36 at https://www.cyclismo.org/tutorial/matlab/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "zh, en, *" https://www.cyclismo.org/tutorial/matlab/index.html -O1 "D:\Matlab Tutorial\Matlab Tutorial" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+12:32:29	Error: 	"Not Found" (404) at link https://www.cyclismo.org/tutorial/matlab/666666 (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:30	Warning: 	Found for www.cyclismo.org/robots.txt
+12:32:30	Warning: 	Redirected link is identical because of 'URL Hack' option: www.cyclismo.org/robots.txt and https://www.cyclismo.org/robots.txt
+12:32:30	Warning: 	Warning moved treated for www.cyclismo.org/robots.txt (real one is https://www.cyclismo.org/robots.txt)
+12:32:30	Warning: 	Found for www.cyclismo.org/tutorial/matlab/
+12:32:30	Warning: 	Redirected link is identical because of 'URL Hack' option: www.cyclismo.org/tutorial/matlab/ and https://www.cyclismo.org/tutorial/matlab/
+12:32:30	Warning: 	File has moved from www.cyclismo.org/tutorial/matlab/ to https://www.cyclismo.org/tutorial/matlab/
+12:32:30	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:30	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://licensebuttons.net/l/by-nc/4.0/80x15.png (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:30	Error: 	"Not Found" (404) at link https://www.cyclismo.org/tutorial/matlab/href="mailto:kjblack@gmail.com" (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:31	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:31	Warning: 	Retry after error -5 (error:00000001:lib(0):func(0):reason(1)) at link https://licensebuttons.net/l/by-nc/4.0/80x15.png (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:31	Error: 	"error:00000001:lib(0):func(0):reason(1)" (-5) after 2 retries at link https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML (from https://www.cyclismo.org/tutorial/matlab/index.html)
+12:32:31	Error: 	"error:00000001:lib(0):func(0):reason(1)" (-5) after 2 retries at link https://licensebuttons.net/l/by-nc/4.0/80x15.png (from https://www.cyclismo.org/tutorial/matlab/index.html)
+
+HTTrack Website Copier/3.48-21 mirror complete in 55 seconds : 52 links scanned, 41 files written (2135461 bytes overall) [2153442 bytes received at 39153 bytes/sec], 2.3 requests per connection
+(4 errors, 10 warnings, 0 messages)

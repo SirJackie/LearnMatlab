@@ -1,0 +1,567 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/subroutine.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Subroutines &mdash; Matlab Tutorial 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/siteColours.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Matlab Tutorial 3.0 documentation" href="index.html"/>
+        <link rel="next" title="The If Statement" href="if.html"/>
+        <link rel="prev" title="Executable Files" href="execute.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matlab Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.cyclismo.org/tutorial/matlab/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+<div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Subroutines</a></li>
+</ul>
+</div>
+					
+
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vector.html">Introduction to Vectors in Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Introduction to Matrices in Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Vector Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="execute.html">Executable Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Subroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="if.html">The If Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataFile.html">Data Files</a></li>
+</ul>
+
+
+<div class="datacampAd">
+  <span style="vertical-align:top;color: black;">
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8301099787686694";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_type = "text_image";
+google_ad_channel ="6171035172";
+google_ad_slot = "4696657180";
+google_color_border = "808080";
+google_color_bg = "F0ECEC";
+google_color_link = "000000";
+google_color_url = "666666.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</center>
+</span>
+</div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Matlab Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Subroutines</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="subroutines">
+<span id="id1"></span><h1>Subroutines<a class="headerlink" href="#subroutines" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will assume that you know how to create vectors
+and matrices, know how to index into them, and know about loops. For
+more information on those topics see one of our tutorials on vectors
+(<a class="reference internal" href="vector.html#vectors"><span>Introduction to Vectors in Matlab</span></a>), matrices (<a class="reference internal" href="matrix.html#matrices"><span>Introduction to Matrices in Matlab</span></a>), vector operations
+(<a class="reference internal" href="operations.html#vectoroperations"><span>Vector Functions</span></a>), loops (<a class="reference internal" href="control.html#loops"><span>Loops</span></a>), plotting
+(<a class="reference internal" href="plot.html#plotting"><span>Plotting</span></a>), or executable files (<a class="reference internal" href="execute.html#executablefile"><span>Executable Files</span></a>).</p>
+<p>Sometimes you want to repeat a sequence of commands, but you want to
+be able to do so with different vectors and matrices. One way to make
+this easier is through the use of subroutines. Subroutines are just
+like executable files, but you can pass it different vectors and
+matrices to use.</p>
+<p>For example, suppose you want a subroutine to perform Gaussian
+elimination, and you want to be able to pass the matrix and pass the
+vector (This example comes from the tutorial on loops
+(<a class="reference internal" href="control.html#loops"><span>Loops</span></a>)). The first line in the file has to tell matlab what
+variables it will pass back when and done, and what variables it needs
+to work with. Here we will try to find <em>x</em> given that <em>Ax=b</em>.</p>
+<p>The routine needs the matrix A and the vector B, and it will pass back
+the vector x. If the name of the file is called <a class="reference download internal" href="_downloads/gaussElim.m"><code class="xref download docutils literal"><span class="pre">gaussElim.m</span></code></a>, then the
+first line will look like this:</p>
+<span class="target" id="index-0"></span><div class="highlight-matlab" id="index-1"><div class="highlight"><pre><span class="k">function</span><span class="w"> </span>[x] <span class="p">=</span><span class="w"> </span><span class="nf">gaussElim</span><span class="p">(</span>A,b<span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If you want to pass back more than one variable, you can include the
+list in the brackets with commas in between the variable names (see
+the second example). If you do not know how to create a file see our
+tutorial on executable files (<a class="reference internal" href="execute.html#executablefile"><span>Executable Files</span></a>).</p>
+<p>Here is a sample listing of the file <a class="reference download internal" href="_downloads/gaussElim.m"><code class="xref download docutils literal"><span class="pre">gaussElim.m</span></code></a>:</p>
+<span class="target" id="index-2"></span><div class="highlight-matlab" id="index-3"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="highlight"><pre><span class="k"> function</span><span class="w"> </span>[x] <span class="p">=</span><span class="w"> </span><span class="nf">gaussElim</span><span class="p">(</span>A,b<span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="c">% File gaussElim.m</span>
+ <span class="c">%   This subroutine will perform Gaussian elmination</span>
+ <span class="c">%   on the matrix that you pass to it.</span>
+ <span class="c">%   i.e., given A and b it can be used to find x,</span>
+ <span class="c">%        Ax = b</span>
+ <span class="c">%</span>
+ <span class="c">%   To run this file you will need to specify several</span>
+ <span class="c">%   things:</span>
+ <span class="c">%   A - matrix for the left hand side.</span>
+ <span class="c">%   b - vector for the right hand side</span>
+ <span class="c">%</span>
+ <span class="c">%   The routine will return the vector x.</span>
+ <span class="c">%   ex: [x] = gaussElim(A,b)</span>
+ <span class="c">%     this will perform Gaussian elminiation to find x.</span>
+ <span class="c">%</span>
+ <span class="c">%</span>
+
+
+  <span class="n">N</span> <span class="p">=</span> <span class="n">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">));</span>
+
+
+ <span class="c">% Perform Gaussian Elimination</span>
+
+  <span class="k">for</span> <span class="nb">j</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="n">N</span><span class="p">,</span>
+      <span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="nb">j</span><span class="p">:</span><span class="n">N</span><span class="p">,</span>
+         <span class="n">m</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+         <span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:)</span> <span class="o">-</span> <span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,:)</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
+         <span class="n">b</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">b</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">-</span> <span class="n">m</span><span class="o">*</span><span class="n">b</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+      <span class="k">end</span>
+  <span class="k">end</span>
+
+ <span class="c">% Perform back substitution</span>
+
+  <span class="n">x</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+  <span class="n">x</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="p">=</span> <span class="n">b</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">/</span><span class="n">A</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="nb">j</span><span class="p">=</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">b</span><span class="p">(</span><span class="nb">j</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="p">,</span><span class="nb">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="nb">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">))</span><span class="o">/</span><span class="n">A</span><span class="p">(</span><span class="nb">j</span><span class="p">,</span><span class="nb">j</span><span class="p">);</span>
+  <span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
+<p>To get the vector x, you simply call the routine by name. For example,
+you could do the following:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">A</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">9</span> <span class="mi">9</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="mi">4</span> <span class="mi">2</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">A</span> <span class="p">=</span>
+
+     <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">6</span>
+     <span class="mi">4</span>     <span class="mi">3</span>     <span class="mi">2</span>     <span class="mi">3</span>
+     <span class="mi">9</span>     <span class="mi">9</span>     <span class="mi">1</span>    <span class="o">-</span><span class="mi">2</span>
+     <span class="mi">4</span>     <span class="mi">2</span>     <span class="mi">2</span>     <span class="mi">1</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">4</span><span class="p">]</span><span class="o">&#39;</span>
+
+<span class="n">b</span> <span class="p">=</span>
+
+     <span class="mi">1</span>
+     <span class="mi">2</span>
+     <span class="mi">1</span>
+     <span class="mi">4</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="n">gaussElim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="n">x</span> <span class="p">=</span>
+
+    <span class="mf">0.6809</span>
+   <span class="o">-</span><span class="mf">0.8936</span>
+    <span class="mf">1.8085</span>
+   <span class="o">-</span><span class="mf">0.5532</span>
+
+<span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Sometimes you want your routine to call another routine that you
+specify. For example, here we will demonstrate a subroutine that will
+approximate a D.E., <em>y&#8217;=f(x,y)</em>, using Euler&#8217;s Method. The subroutine is
+able to call a function, <em>f(x,y)</em>, specified by you.
+Here a subroutine is defined that will approximate a D.E. using
+Euler&#8217;s method. If you do not know how to create a file see our
+tutorial on executable files (<a class="reference internal" href="execute.html#executablefile"><span>Executable Files</span></a>).</p>
+<p>Here is a sample listing of the file <a class="reference external" href="_static/eulerApprox.m">eulerApprox.m</a>:</p>
+<div class="highlight-matlab"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span class="k"> function</span><span class="w"> </span>[x,y] <span class="p">=</span><span class="w"> </span><span class="nf">eulerApprox</span><span class="p">(</span>startx,h,endx,starty,func<span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="c">% file: eulerApprox.m</span>
+ <span class="c">% This matlab subroutine will find the approximation to</span>
+ <span class="c">%  a D.E. given by</span>
+ <span class="c">%     y&#39; = func(x,y)</span>
+ <span class="c">%     y(startx) = starty</span>
+ <span class="c">%</span>
+ <span class="c">%  To run this file you will first need to specify</span>
+ <span class="c">%  the following:</span>
+ <span class="c">%      startx  : the starting value for x</span>
+ <span class="c">%      h       : the step size</span>
+ <span class="c">%      endx    : the ending value for x</span>
+ <span class="c">%      starty  : the initial value</span>
+ <span class="c">%      func    : routine name to calculate the right hand</span>
+ <span class="c">%                side of the D.E..  This must be specified</span>
+ <span class="c">%                as a string.</span>
+ <span class="c">%</span>
+ <span class="c">%   ex: [x,y] = eulerApprox(0,1,1/16,1,&#39;f&#39;);</span>
+ <span class="c">%       Will return the approximation of a D.E.</span>
+ <span class="c">%       where x is from 0 to 1 in steps of 1/16.</span>
+ <span class="c">%       The initial value is 1, and the right hand</span>
+ <span class="c">%       side is calculated in a subroutine given by</span>
+ <span class="c">%       f.m.</span>
+ <span class="c">%</span>
+ <span class="c">%  The routine will generate two vectors.  The first</span>
+ <span class="c">%  vector is x which is the grid points starting at</span>
+ <span class="c">%  x0=0 and have a step size h.</span>
+ <span class="c">%</span>
+ <span class="c">%  The second vector is an approximation to the specified</span>
+ <span class="c">%  D.E.</span>
+ <span class="c">%</span>
+
+
+
+ <span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="n">startx</span><span class="p">:</span><span class="n">h</span><span class="p">:</span><span class="n">endx</span><span class="p">];</span>
+
+ <span class="n">y</span> <span class="p">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+ <span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">starty</span><span class="p">;</span>
+
+ <span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="n">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">y</span><span class="p">)),</span>
+    <span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">h</span><span class="o">*</span><span class="n">feval</span><span class="p">(</span><span class="n">func</span><span class="p">,</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+ <span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
+<p>In this example, we will approximate the D.E. y&#8217;=1/y. To do this you
+will have to create a file called <a class="reference download internal" href="_downloads/f.m"><code class="xref download docutils literal"><span class="pre">f.m</span></code></a> with the
+following commands:</p>
+<div class="highlight-matlab"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span class="k"> function</span><span class="w"> </span>[f] <span class="p">=</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span>x,y<span class="p">)</span><span class="w"></span>
+<span class="w"> </span><span class="c">% Evaluation of right hand side of a differential</span>
+ <span class="c">% equation.</span>
+
+ <span class="n">f</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">y</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<p>With the subroutine defined, you can call it whenever necessary. Note
+that when you put comments on the 2nd line, it acts as a help file.
+Also note that the function <a class="reference download internal" href="_downloads/f.m"><code class="xref download docutils literal"><span class="pre">f.m</span></code></a> must be
+specified as a string, &#8216;<em>f</em>&#8216;.</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">help</span> <span class="n">eulerApprox</span>
+
+  <span class="n">file</span><span class="p">:</span> <span class="n">eulerApprox</span><span class="p">.</span><span class="n">m</span>
+  <span class="n">This</span> <span class="n">matlab</span> <span class="n">subroutine</span> <span class="n">will</span> <span class="nb">find</span> <span class="n">the</span> <span class="n">approximation</span> <span class="n">to</span>
+   <span class="n">a</span> <span class="n">D</span><span class="p">.</span><span class="n">E</span><span class="p">.</span> <span class="n">given</span> <span class="n">by</span>
+      <span class="n">y</span><span class="o">&#39;</span> <span class="p">=</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+      <span class="n">y</span><span class="p">(</span><span class="n">startx</span><span class="p">)</span> <span class="p">=</span> <span class="n">starty</span>
+
+   <span class="n">To</span> <span class="n">run</span> <span class="n">this</span> <span class="n">file</span> <span class="n">you</span> <span class="n">will</span> <span class="n">first</span> <span class="n">need</span> <span class="n">to</span> <span class="n">specify</span>
+   <span class="n">the</span> <span class="n">following</span><span class="p">:</span>
+       <span class="n">startx</span>  <span class="p">:</span> <span class="n">the</span> <span class="n">starting</span> <span class="n">value</span> <span class="k">for</span> <span class="n">x</span>
+       <span class="n">h</span>       <span class="p">:</span> <span class="n">the</span> <span class="n">step</span> <span class="nb">size</span>
+       <span class="n">endx</span>    <span class="p">:</span> <span class="n">the</span> <span class="n">ending</span> <span class="n">value</span> <span class="k">for</span> <span class="n">x</span>
+       <span class="n">starty</span>  <span class="p">:</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">value</span>
+       <span class="n">func</span>    <span class="p">:</span> <span class="n">routine</span> <span class="n">name</span> <span class="n">to</span> <span class="n">calculate</span> <span class="n">the</span> <span class="n">right</span> <span class="n">hand</span>
+                 <span class="n">side</span> <span class="n">of</span> <span class="n">the</span> <span class="n">D</span><span class="p">.</span><span class="n">E</span><span class="p">..</span>  <span class="n">This</span> <span class="n">must</span> <span class="n">be</span> <span class="n">specified</span>
+                 <span class="n">as</span> <span class="n">a</span> <span class="n">string</span><span class="p">.</span>
+
+    <span class="n">ex</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">eulerApprox</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">);</span>
+        <span class="n">Will</span> <span class="k">return</span> <span class="n">the</span> <span class="n">approximation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">D</span><span class="p">.</span><span class="n">E</span><span class="p">.</span>
+        <span class="n">where</span> <span class="n">x</span> <span class="n">is</span> <span class="n">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">1</span> <span class="n">in</span> <span class="n">steps</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="mf">16.</span>
+        <span class="n">The</span> <span class="n">initial</span> <span class="n">value</span> <span class="n">is</span> <span class="mi">1</span><span class="p">,</span> <span class="n">and</span> <span class="n">the</span> <span class="n">right</span> <span class="n">hand</span>
+        <span class="n">side</span> <span class="n">is</span> <span class="n">calculated</span> <span class="n">in</span> <span class="n">a</span> <span class="n">subroutine</span> <span class="n">given</span> <span class="n">by</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">m</span><span class="p">.</span>
+
+   <span class="n">The</span> <span class="n">routine</span> <span class="n">will</span> <span class="n">generate</span> <span class="n">two</span> <span class="n">vectors</span><span class="p">.</span>  <span class="n">The</span> <span class="n">first</span>
+   <span class="n">vector</span> <span class="n">is</span> <span class="n">x</span> <span class="n">which</span> <span class="n">is</span> <span class="n">the</span> <span class="n">grid</span> <span class="n">points</span> <span class="n">starting</span> <span class="n">at</span>
+   <span class="n">x0</span><span class="p">=</span><span class="mi">0</span> <span class="n">and</span> <span class="n">have</span> <span class="n">a</span> <span class="n">step</span> <span class="nb">size</span> <span class="n">h</span><span class="p">.</span>
+
+   <span class="n">The</span> <span class="n">second</span> <span class="n">vector</span> <span class="n">is</span> <span class="n">an</span> <span class="n">approximation</span> <span class="n">to</span> <span class="n">the</span> <span class="n">specified</span>
+   <span class="n">D</span><span class="p">.</span><span class="n">E</span><span class="p">.</span>
+
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">eulerApprox</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">16</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">);</span>
+<span class="o">&gt;&gt;</span> <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When the subroutine is done, it returns two vectors and stores them in
+<em>x</em> and <em>y</em>.</p>
+</div>
+
+
+           </div>
+          </div>
+          
+
+
+
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="if.html" class="btn btn-neutral float-right" title="The If Statement" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="execute.html" class="btn btn-neutral" title="Executable Files" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+		
+
+		<br><br>
+
+
+<footer>
+		<hr/>
+
+		<div role="contentinfo">
+          <center>
+          <script async src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- matlab tutorial wide -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8301099787686694"
+     data-ad-slot="8763269985"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+
+			<p>
+			<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:kjblack@gmail.com" property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> (2015).<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+            </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../cdn.mathjax.org/mathjax/latest/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="../../../licensebuttons.net/l/by-nc/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href=href%3d_mailto_kjblack%40gmail.html property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+</p>
+<p>This page generated using <a href="http://sphinx-doc.org/">Sphinx</a>.</p>
+
+
+
+
+
+</body>
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/subroutine.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:29 GMT -->
+</html>

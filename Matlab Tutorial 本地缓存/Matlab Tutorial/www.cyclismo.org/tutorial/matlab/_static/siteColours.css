@@ -1,0 +1,116 @@
+/* http://paletton.com/#uid=53v0u0kllllaFw0g0qFqFg0w0aF */
+
+.datacampAd{
+		text-align: center;
+		background:#f9f9f9;
+}
+
+div.admonition.note > p.first.admonition-title{
+		background:#4146a4;
+		color: #33A26D;
+}
+
+a:visited {
+    color: #4A9470; /* #545994; */
+		font-weight: 500;
+}
+
+a {
+    color: #4A9470;
+    text-decoration: none;
+    cursor: pointer;
+		font-weight: 500;
+}
+
+div.admonition.note{
+		background:#f9f9f9;
+		background: radial-gradient(#f2f2f2,#fdfdfd);
+}
+
+div.admonition.note::first{
+		background:#f9f9f9;
+}
+
+div.wy-menu.wy-menu-vertical > div > a{
+		display: inline;
+		padding:0px;
+		font-weight: bold;
+		color: #4A9470;
+}
+
+div.wy-menu.wy-menu-vertical > div > a{
+		padding:0px;
+		font-weight: bold;
+		color: #4A9470;
+}
+
+div.wy-side-nav-search > a {
+		font-weight: bold;
+		color: #fff;
+}
+
+div.wy-menu.wy-menu-vertical{
+   background-color:#f3f3f3;
+   color:#000;
+}
+
+.wy-menu-vertical{
+		color:#000
+}
+
+.wy-menu-vertical a {
+    line-height: 18px;
+    padding: 0.4045em 1.618em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #000060;
+}
+
+
+
+.wy-menu-vertical li.current a {
+    color: #000060;
+}
+
+.wy-side-nav-search {
+    padding: 0.809em;
+    margin-bottom: 0.809em;
+    z-index: 200;
+    background-color: #191C59;
+    text-align: center;
+    padding: 0.809em;
+    display: block;
+    color: #76B295;
+    margin-bottom: 0.809em;
+}
+
+.wy-nav-top {
+    background-color: #191C59;
+}
+
+
+.wy-side-scroll {
+     width: 250px;
+}
+
+.wy-nav-side {
+     width: 250px;
+}
+
+.wy-menu-vertical{
+     width: 250px;
+}
+
+.wy-side-nav-search{
+     width: 250px;
+}
+
+.wy-nav-content-wrap {
+    margin-left: 250px;
+}
+
+.wy-nav-content{
+    max-width: 1000px;
+}
+

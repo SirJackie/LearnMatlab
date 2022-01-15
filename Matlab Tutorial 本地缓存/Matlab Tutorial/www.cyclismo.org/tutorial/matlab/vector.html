@@ -1,0 +1,546 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/vector.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Introduction to Vectors in Matlab &mdash; Matlab Tutorial 3.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/siteColours.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Matlab Tutorial 3.0 documentation" href="index.html"/>
+        <link rel="next" title="Introduction to Matrices in Matlab" href="matrix.html"/>
+        <link rel="prev" title="Matlab Tutorial" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matlab Tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                3.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="https://www.cyclismo.org/tutorial/matlab/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+<div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Introduction to Vectors in Matlab</a><ul>
+<li><a class="reference internal" href="#defining-a-vector">Defining a Vector</a></li>
+<li><a class="reference internal" href="#accessing-elements-within-a-vector">Accessing elements within a vector</a></li>
+<li><a class="reference internal" href="#basic-operations-on-vectors">Basic operations on vectors</a></li>
+</ul>
+</li>
+</ul>
+</div>
+					
+
+
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Vectors in Matlab</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#defining-a-vector">Defining a Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-elements-within-a-vector">Accessing elements within a vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-operations-on-vectors">Basic operations on vectors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="matrix.html">Introduction to Matrices in Matlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Vector Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="execute.html">Executable Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subroutine.html">Subroutines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="if.html">The If Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataFile.html">Data Files</a></li>
+</ul>
+
+
+<div class="datacampAd">
+  <span style="vertical-align:top;color: black;">
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8301099787686694";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_type = "text_image";
+google_ad_channel ="6171035172";
+google_ad_slot = "4696657180";
+google_color_border = "808080";
+google_color_bg = "F0ECEC";
+google_color_link = "000000";
+google_color_url = "666666.html";
+google_color_text = "000000";
+//--></script>
+<script type="text/javascript"
+  src="../../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</center>
+</span>
+</div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Matlab Tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Introduction to Vectors in Matlab</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction-to-vectors-in-matlab">
+<span id="vectors"></span><h1>Introduction to Vectors in Matlab<a class="headerlink" href="#introduction-to-vectors-in-matlab" title="Permalink to this headline">¶</a></h1>
+<p>This is the basic introduction to Matlab. Creation of vectors is
+included with a few basic operations. Topics include the following:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#definingvectors"><span>Defining a Vector</span></a></li>
+<li><a class="reference internal" href="#accessingvectorentries"><span>Accessing elements within a vector</span></a></li>
+<li><a class="reference internal" href="#basicvectorops"><span>Basic operations on vectors</span></a></li>
+</ol>
+<div class="section" id="defining-a-vector">
+<span id="definingvectors"></span><span id="index-0"></span><h2>Defining a Vector<a class="headerlink" href="#defining-a-vector" title="Permalink to this headline">¶</a></h2>
+<p>Matlab is a software package that makes it easier for you to enter
+matrices and vectors, and manipulate them. The interface follows a
+language that is designed to look a lot like the notation use in
+linear algebra. In the following tutorial, we will discuss some of the
+basics of working with vectors.</p>
+<p>If you are running windows or Mac OSX, you can start matlab by
+choosing it from the menu. To start matlab on a unix system, open up a
+unix shell and type the command to start the software: <em>matlab</em>. This
+will start up the software, and it will wait for you to enter your
+commands. In the text that follows, any line that starts with two
+greater than signs (&gt;&gt;) is used to denote the matlab command line.
+This is where you enter your commands.</p>
+<p>Almost all of Matlab&#8217;s basic commands revolve around the use of
+vectors. A vector is defined by placing a sequence of numbers within
+square braces:</p>
+<div class="highlight-matlab" id="index-1"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">3</span>     <span class="mi">1</span>
+</pre></div>
+</div>
+<p>This creates a row vector which has the label &#8220;v&#8221;. The first entry in
+the vector is a 3 and the second entry is a 1. Note that matlab
+printed out a copy of the vector after you hit the enter key. If you
+do not want to print out the result put a semi-colon at the end of the
+line:</p>
+<span class="target" id="index-2"></span><div class="highlight-matlab" id="index-3"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span><span class="p">];</span>
+<span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
+<p>If you want to view the vector just type its label:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">3</span>     <span class="mi">1</span>
+</pre></div>
+</div>
+<p>You can define a vector of any size in this manner:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span> <span class="mi">7</span> <span class="o">-</span><span class="mi">21</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">3</span>     <span class="mi">1</span>    <span class="mi">7</span>    <span class="o">-</span><span class="mi">21</span>    <span class="mi">5</span>    <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Notice, though, that this always creates a row vector. If you want to
+create a column vector you need to take the transpose of a row vector.
+The transpose is defined using an apostrophe (<em>&#8216;</em>):</p>
+<span class="target" id="index-4"></span><div class="highlight-matlab" id="index-5"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">1</span> <span class="mi">7</span> <span class="o">-</span><span class="mi">21</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span><span class="o">&#39;</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">3</span>
+     <span class="mi">1</span>
+     <span class="mi">7</span>
+   <span class="o">-</span><span class="mi">21</span>
+     <span class="mi">5</span>
+     <span class="mi">6</span>
+</pre></div>
+</div>
+<p>A common task is to create a large vector with numbers that fit a
+repetitive pattern. Matlab can define a set of numbers with a common
+increment using colons. For example, to define a vector whose first
+entry is <em>1</em>, the second entry is <em>2</em>, the third is <em>3</em>, and
+sequentially through <em>8</em>, you enter the following:</p>
+<span class="target" id="index-6"></span><div class="highlight-matlab" id="index-7"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>     <span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
+</pre></div>
+</div>
+<p>If you wish to use an increment other than one that you have to define
+the start number, the value of the increment, and the last number. For
+example, to define a vector that starts with <em>2</em> and ends in <em>4</em> with
+steps of <em>0.25</em> you enter the following:</p>
+<span class="target" id="index-8"></span><div class="highlight-matlab" id="index-9"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">:.</span><span class="mi">25</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+  <span class="n">Columns</span> <span class="mi">1</span> <span class="n">through</span> <span class="mi">7</span>
+
+    <span class="mf">2.0000</span>    <span class="mf">2.2500</span>    <span class="mf">2.5000</span>    <span class="mf">2.7500</span>    <span class="mf">3.0000</span>    <span class="mf">3.2500</span>    <span class="mf">3.5000</span>
+
+  <span class="n">Columns</span> <span class="mi">8</span> <span class="n">through</span> <span class="mi">9</span>
+
+    <span class="mf">3.7500</span>    <span class="mf">4.0000</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accessing-elements-within-a-vector">
+<span id="accessingvectorentries"></span><h2>Accessing elements within a vector<a class="headerlink" href="#accessing-elements-within-a-vector" title="Permalink to this headline">¶</a></h2>
+<p>You can view individual entries in this vector. For example to view
+the first entry just type in the following:</p>
+<span class="target" id="index-10"></span><span class="target" id="index-11"></span><div class="highlight-matlab" id="index-12"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">2</span>
+</pre></div>
+</div>
+<p>This command prints out entry <em>1</em> in the vector. Also notice that a
+new variable called <em>ans</em> has been created. Any time you perform an
+action that does not include an assignment matlab will put the label
+<em>ans</em> on the result.</p>
+<p>To simplify the creation of large vectors, you can define a vector by
+specifying the first entry, an increment, and the last entry. Matlab
+will automatically figure out how many entries you need and their
+values. For example, to create a vector whose entries are <em>0</em>, <em>2</em>,
+<em>4</em>, <em>6</em>, and <em>8</em>, you can type in the following line:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">2</span>     <span class="mi">4</span>     <span class="mi">6</span>     <span class="mi">8</span>
+</pre></div>
+</div>
+<p>Matlab also keeps track of the last result. In the previous example, a
+variable <em>ans</em> is created. To look at the transpose of the previous
+result, enter the following:</p>
+<div class="highlight-matlab" id="index-13"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="nb">ans</span><span class="o">&#39;</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>
+     <span class="mi">2</span>
+     <span class="mi">4</span>
+     <span class="mi">6</span>
+     <span class="mi">8</span>
+</pre></div>
+</div>
+<p>To be able to keep track of the vectors you create, you can give them
+names. For example, a row vector <strong>v</strong> can be created:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">2</span>     <span class="mi">4</span>     <span class="mi">6</span>     <span class="mi">8</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span>
+
+<span class="n">v</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">2</span>     <span class="mi">4</span>     <span class="mi">6</span>     <span class="mi">8</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">&#39;</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>
+     <span class="mi">2</span>
+     <span class="mi">4</span>
+     <span class="mi">6</span>
+     <span class="mi">8</span>
+</pre></div>
+</div>
+<p>Note that in the previous example, if you end the line with a semi-
+colon, the result is not displayed. This will come in handy later when
+you want to use Matlab to work with very large systems of equations.</p>
+<p>Matlab will allow you to look at specific parts of the vector. If you
+want to only look at the first three entries in a vector you can use
+the same notation you used to create the vector:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">2</span>     <span class="mi">4</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">4</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span><span class="o">&#39;</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>
+     <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-operations-on-vectors">
+<span id="basicvectorops"></span><h2>Basic operations on vectors<a class="headerlink" href="#basic-operations-on-vectors" title="Permalink to this headline">¶</a></h2>
+<p>Once you master the notation you are free to perform other operations:</p>
+<span class="target" id="index-14"></span><div class="highlight-matlab" id="index-15"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">v</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+    <span class="o">-</span><span class="mi">2</span>    <span class="o">-</span><span class="mi">2</span>    <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>For the most part Matlab follows the standard notation used in linear
+algebra. We will see later that there are some extensions to make some
+operations easier. For now, though, both addition subtraction are
+defined in the standard way. For example, to define a new vector with
+the numbers from <em>0</em> to <em>-4</em> in steps of <em>-1</em> we do the following:</p>
+<div class="highlight-matlab" id="index-16"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">u</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+
+<span class="n">u</span> <span class="p">=</span>
+
+     <span class="mi">0</span>    <span class="o">-</span><span class="mi">1</span>    <span class="o">-</span><span class="mi">2</span>    <span class="o">-</span><span class="mi">3</span>    <span class="o">-</span><span class="mi">4</span>
+</pre></div>
+</div>
+<p>We can now add <strong>u</strong> and <strong>v</strong> together in the standard way:</p>
+<div class="highlight-matlab" id="index-17"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">u</span><span class="o">+</span><span class="n">v</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span>
+</pre></div>
+</div>
+<p>Additionally, scalar multiplication is defined in the standard way.
+Also note that scalar division is defined in a way that is consistent
+with scalar multiplication:</p>
+<div class="highlight-matlab" id="index-18"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+     <span class="mi">0</span>     <span class="mi">2</span>     <span class="mi">4</span>     <span class="mi">6</span>     <span class="mi">8</span>
+
+<span class="o">&gt;&gt;</span> <span class="n">v</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+         <span class="mi">0</span>    <span class="mf">0.6667</span>    <span class="mf">1.3333</span>    <span class="mf">2.0000</span>    <span class="mf">2.6667</span>
+</pre></div>
+</div>
+<p>With these definitions linear combinations of vectors can be easily
+defined and the basic operations combined:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="nb">ans</span> <span class="p">=</span>
+
+         <span class="mi">0</span>    <span class="mf">2.6667</span>    <span class="mf">5.3333</span>    <span class="mf">8.0000</span>   <span class="mf">10.6667</span>
+</pre></div>
+</div>
+<p>You will need to be careful. These operations can only be carried out
+when the dimensions of the vectors allow it. You will likely get used
+to seeing the following error message which follows from adding two
+vectors whose dimensions are different:</p>
+<div class="highlight-matlab"><div class="highlight"><pre><span class="o">&gt;&gt;</span> <span class="n">u</span><span class="o">+</span><span class="n">v</span><span class="o">&#39;</span>
+??? <span class="n">Error</span> <span class="n">using</span> <span class="o">==&gt;</span> <span class="n">plus</span>
+<span class="n">Matrix</span> <span class="n">dimensions</span> <span class="n">must</span> <span class="n">agree</span><span class="p">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          
+
+
+
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="matrix.html" class="btn btn-neutral float-right" title="Introduction to Matrices in Matlab" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Matlab Tutorial" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+		
+
+		<br><br>
+
+
+<footer>
+		<hr/>
+
+		<div role="contentinfo">
+          <center>
+          <script async src="../../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- matlab tutorial wide -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8301099787686694"
+     data-ad-slot="8763269985"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+
+			<p>
+			<span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="mailto:kjblack@gmail.com" property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> (2015).<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+            </p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'3.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../cdn.mathjax.org/mathjax/latest/MathJaxdda6.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="../../../licensebuttons.net/l/by-nc/4.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Matlab Tutorial</span> by <a xmlns:cc="http://creativecommons.org/ns#" href=href%3d_mailto_kjblack%40gmail.html property="cc:attributionName" rel="cc:attributionURL">Kelly Black</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="index-2.html" rel="dct:source">http://www.cyclismo.org/tutorial/matlab/</a>.
+</p>
+<p>This page generated using <a href="http://sphinx-doc.org/">Sphinx</a>.</p>
+
+
+
+
+
+</body>
+
+<!-- Mirrored from www.cyclismo.org/tutorial/matlab/vector.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jan 2022 04:32:27 GMT -->
+</html>
