@@ -28,7 +28,11 @@ clc
 % % Ctrl + T to un-comment
 % % You can modify this shortcut by clicking 主页-预设-键盘-快捷方式
 
-% % Vector Definition
+% % % % % 
+% % % % % About Vector Creating and Reading
+% % % % % 
+
+% % Define a Vector
 % % Unlike Sympy
 % % There's no "," between each entry
 % v = [3 1]
@@ -77,13 +81,45 @@ clc
 % a = [0:2:8]
 % a = 0:2:8
 
-% You can also view specific parts of vector using ()
-% Notice that indicies in Matlab starts from 1 instead of 0
-% So you can't use v(0), please use v(1) instead
-v = [1:10];
-v(1)
-v(1:5)
-v(1:2:10)
+% % You can also view specific parts of vector using ()
+% % Notice that indicies in Matlab starts from 1 instead of 0
+% % So you can't use v(0), please use v(1) instead
+% v = [1:10];
+% v(1)
+% v(1:5)
+% v(1:2:10)
+
+% % % % % 
+% % % % % About Vector's Operations
+% % % % % 
+
+% % Addition and Subtraction
+% v = [1:10];
+% expr = v(1:3) - v(2:4);
+% expr
+% expr = v(1:3) + v(2:4);
+% expr
+
+% Mutiplication and Division
+v = [1:3];
+expr1 = v * 2
+expr2 = v / 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
