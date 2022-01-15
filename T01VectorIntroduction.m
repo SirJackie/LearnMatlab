@@ -65,7 +65,7 @@ clc
 % % Unlike Python, Matlab use v(x) to access the entry instead of v[x] in
 % % Python
 % % Comparison:  Accessing Entry     Call Function
-% % Matlab -----       v(n)          Don't know yet
+% % Matlab -----       v(n)               f(x)
 % % Python -----       v[n]               f(x)
 % v = [1:8];
 % v(1)
